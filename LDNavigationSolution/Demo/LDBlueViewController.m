@@ -7,8 +7,10 @@
 //
 
 #import "LDBlueViewController.h"
+#import "UINavigationController+LDNavigationSolution.h"
+#import "LDOrangeViewController.h"
 
-@interface LDBlueViewController ()
+@interface LDBlueViewController ()<UINavigationControllerCustomizable, UIAlertViewDelegate>
 
 @end
 
@@ -16,22 +18,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - UINavigationControllerCustomizable
+// 监听点击返回和手势返回
+- (BOOL)navigationController:(UINavigationController *)navigationController shouldJumpToViewControllerUsingGesture:(BOOL)usingGesture {
+    if (usingGesture) {
+        navigationController.ld_jumpToViewController = [[LDOrangeViewController alloc] init];
+        return YES;
+    } else {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"温馨提示" message:@"是否返回到上个页面？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        [alertView show];
+        
+        return NO;
+    }
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - UIAlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    [self.navigationController popViewControllerAnimated:YES];
 }
-*/
 
 @end
