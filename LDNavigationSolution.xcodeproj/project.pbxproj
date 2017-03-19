@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		95253B511E7ECE0C00E37D2C /* LDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95253B501E7ECE0C00E37D2C /* LDBaseViewController.m */; };
+		95253B551E7ED9C200E37D2C /* UIBarButtonItem+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 95253B541E7ED9C200E37D2C /* UIBarButtonItem+Convenience.m */; };
 		95380C731E7E74DC00CBBB32 /* LDGrayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95380C721E7E74DC00CBBB32 /* LDGrayViewController.m */; };
 		95380C761E7E74EE00CBBB32 /* LDOrangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95380C751E7E74EE00CBBB32 /* LDOrangeViewController.m */; };
 		95380C791E7E74FE00CBBB32 /* LDBlueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95380C781E7E74FE00CBBB32 /* LDBlueViewController.m */; };
@@ -16,15 +17,15 @@
 		95380C811E7E781C00CBBB32 /* LDGlobalSwitchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95380C801E7E781C00CBBB32 /* LDGlobalSwitchView.xib */; };
 		9594E8591E7BE6D100900F46 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594E8581E7BE6D100900F46 /* main.m */; };
 		9594E85C1E7BE6D100900F46 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594E85B1E7BE6D100900F46 /* AppDelegate.m */; };
-		9594E8621E7BE6D100900F46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9594E8601E7BE6D100900F46 /* Main.storyboard */; };
 		9594E8641E7BE6D100900F46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9594E8631E7BE6D100900F46 /* Assets.xcassets */; };
-		9594E8671E7BE6D100900F46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9594E8651E7BE6D100900F46 /* LaunchScreen.storyboard */; };
 		9594E8701E7BE72E00900F46 /* UINavigationController+LDNavigationSolution.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594E86F1E7BE72E00900F46 /* UINavigationController+LDNavigationSolution.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		95253B4F1E7ECE0C00E37D2C /* LDBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDBaseViewController.h; sourceTree = "<group>"; };
 		95253B501E7ECE0C00E37D2C /* LDBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDBaseViewController.m; sourceTree = "<group>"; };
+		95253B531E7ED9C200E37D2C /* UIBarButtonItem+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Convenience.h"; sourceTree = "<group>"; };
+		95253B541E7ED9C200E37D2C /* UIBarButtonItem+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Convenience.m"; sourceTree = "<group>"; };
 		95380C711E7E74DC00CBBB32 /* LDGrayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDGrayViewController.h; sourceTree = "<group>"; };
 		95380C721E7E74DC00CBBB32 /* LDGrayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDGrayViewController.m; sourceTree = "<group>"; };
 		95380C741E7E74EE00CBBB32 /* LDOrangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDOrangeViewController.h; sourceTree = "<group>"; };
@@ -40,9 +41,7 @@
 		9594E8581E7BE6D100900F46 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9594E85A1E7BE6D100900F46 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9594E85B1E7BE6D100900F46 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9594E8611E7BE6D100900F46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9594E8631E7BE6D100900F46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9594E8661E7BE6D100900F46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9594E8681E7BE6D100900F46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9594E86E1E7BE72E00900F46 /* UINavigationController+LDNavigationSolution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+LDNavigationSolution.h"; sourceTree = "<group>"; };
 		9594E86F1E7BE72E00900F46 /* UINavigationController+LDNavigationSolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+LDNavigationSolution.m"; sourceTree = "<group>"; };
@@ -67,6 +66,16 @@
 				95380C801E7E781C00CBBB32 /* LDGlobalSwitchView.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		95253B521E7ED97700E37D2C /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				95253B531E7ED9C200E37D2C /* UIBarButtonItem+Convenience.h */,
+				95253B541E7ED9C200E37D2C /* UIBarButtonItem+Convenience.m */,
+			);
+			name = Category;
+			path = Category;
 			sourceTree = "<group>";
 		};
 		9594E84B1E7BE6D100900F46 = {
@@ -119,7 +128,10 @@
 		9597B5FC1E7E64A40039C3FE /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				95253B521E7ED97700E37D2C /* Category */,
 				95253B4E1E7ECACD00E37D2C /* View */,
+				95253B4F1E7ECE0C00E37D2C /* LDBaseViewController.h */,
+				95253B501E7ECE0C00E37D2C /* LDBaseViewController.m */,
 				95380C771E7E74FE00CBBB32 /* LDBlueViewController.h */,
 				95380C781E7E74FE00CBBB32 /* LDBlueViewController.m */,
 				95380C7A1E7E751C00CBBB32 /* LDBrownViewController.h */,
@@ -128,10 +140,6 @@
 				95380C721E7E74DC00CBBB32 /* LDGrayViewController.m */,
 				95380C741E7E74EE00CBBB32 /* LDOrangeViewController.h */,
 				95380C751E7E74EE00CBBB32 /* LDOrangeViewController.m */,
-				95253B4F1E7ECE0C00E37D2C /* LDBaseViewController.h */,
-				95253B501E7ECE0C00E37D2C /* LDBaseViewController.m */,
-				9594E8651E7BE6D100900F46 /* LaunchScreen.storyboard */,
-				9594E8601E7BE6D100900F46 /* Main.storyboard */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -195,10 +203,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9594E8671E7BE6D100900F46 /* LaunchScreen.storyboard in Resources */,
 				95380C811E7E781C00CBBB32 /* LDGlobalSwitchView.xib in Resources */,
 				9594E8641E7BE6D100900F46 /* Assets.xcassets in Resources */,
-				9594E8621E7BE6D100900F46 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,32 +223,12 @@
 				9594E85C1E7BE6D100900F46 /* AppDelegate.m in Sources */,
 				95380C7F1E7E780F00CBBB32 /* LDGlobalSwitchView.m in Sources */,
 				95380C761E7E74EE00CBBB32 /* LDOrangeViewController.m in Sources */,
+				95253B551E7ED9C200E37D2C /* UIBarButtonItem+Convenience.m in Sources */,
 				9594E8591E7BE6D100900F46 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		9594E8601E7BE6D100900F46 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9594E8611E7BE6D100900F46 /* Base */,
-			);
-			name = Main.storyboard;
-			path = .;
-			sourceTree = "<group>";
-		};
-		9594E8651E7BE6D100900F46 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9594E8661E7BE6D100900F46 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			path = .;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		9594E8691E7BE6D100900F46 /* Debug */ = {

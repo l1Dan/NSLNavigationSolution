@@ -7,18 +7,22 @@
 //
 
 #import "LDBrownViewController.h"
+#import "UIBarButtonItem+Convenience.h"
 
 @implementation LDBrownViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIBarButtonItem *customBackItem = [[UIBarButtonItem alloc] initWithTitle:@"Custom Back Item" style:UIBarButtonItemStylePlain target:self action:@selector(clickCustomBackItem:)];
+    self.view.backgroundColor = [UIColor brownColor];
+    self.navigationItem.title = @"第 2 页";
+    
+    UIBarButtonItem *customBackItem = [UIBarButtonItem itemWithTitle:@"点我返回" target:self action:@selector(clickBackItem:)];
     self.navigationItem.leftBarButtonItem = customBackItem;
 }
 
 /// 自定义返回按钮点击返回
-- (void)clickCustomBackItem:(UIBarButtonItem *)item {
+- (void)clickBackItem:(UIBarButtonItem *)item {
     [self.navigationController ld_clickBackBarButtonItem];
 }
 

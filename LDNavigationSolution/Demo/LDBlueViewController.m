@@ -16,6 +16,13 @@
 
 @implementation LDBlueViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.view.backgroundColor = [UIColor blueColor];
+    self.navigationItem.title = @"第 1 页";
+}
+
 #pragma mark - UINavigationControllerCustomizable
 // 监听点击返回和手势返回
 - (BOOL)navigationController:(UINavigationController *)navigationController shouldJumpToViewControllerUsingGesture:(BOOL)usingGesture {
@@ -32,9 +39,11 @@
 
 #pragma mark - UIAlertViewDelegate
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    self.navigationController.ld_jumpToViewController = [[LDGrayViewController alloc] init];
-    
-    [self.navigationController popViewControllerAnimated:YES];
+    if (buttonIndex != 0) {
+        self.navigationController.ld_jumpToViewController = [[LDGrayViewController alloc] init];
+        
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 @end

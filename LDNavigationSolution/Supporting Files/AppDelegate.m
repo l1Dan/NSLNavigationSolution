@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "UINavigationController+LDNavigationSolution.h"
+#import "LDGrayViewController.h"
 
 @interface AppDelegate () <LDGlobalSwitchViewDelegate>
 
@@ -16,14 +17,28 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = [self rootViewController];
+    
+    [self.window makeKeyAndVisible];
+    [self.window.rootViewController.view addSubview:self.globalView];
+    
+    return YES;
+}
+
+- (UIViewController *)rootViewController {
+    UIViewController *rootViewController = [[LDGrayViewController alloc] init];
+    return [[UINavigationController alloc] initWithRootViewController:rootViewController];
+}
+
+- (LDGlobalSwitchView *)globalView {
     if (!_globalView) {
         _globalView = [LDGlobalSwitchView globalSwitchView];
         _globalView.frame = CGRectMake(20, 300, 100, 100);
         _globalView.delegate = self;
-        [self.window.rootViewController.view addSubview:_globalView];
     }
-    
-    return YES;
+    return _globalView;
 }
 
 #pragma mark - LDGlobalSwitchViewDelegate

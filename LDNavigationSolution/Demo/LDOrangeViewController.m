@@ -19,20 +19,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"4-------4";
     self.view.backgroundColor = [UIColor orangeColor];
+    self.navigationItem.title = @"第 4 页";
 }
 
 #pragma mark - UINavigationControllerCustomizable
 - (BOOL)navigationController:(UINavigationController *)navigationController shouldJumpToViewControllerUsingGesture:(BOOL)usingGesture {
     navigationController.ld_jumpToViewController = [[LDGrayViewController alloc] init];
     // or
-    //    for (UIViewController *vc in [navigationController viewControllers]) {
-    //        if ([vc isKindOfClass:[LDGrayViewController class]]) {
-    //            navigationController.ld_jumpToViewController = vc;
-    //            break;
-    //        }
-    //    }
+//    for (UIViewController *vc in [navigationController viewControllers]) {
+//        if ([vc isKindOfClass:[LDGrayViewController class]]) {
+//            navigationController.ld_jumpToViewController = vc;
+//            break;
+//        }
+//    }
     
     return YES;
 }
