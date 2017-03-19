@@ -2,7 +2,7 @@
 A iOS navigation solution.
 一个 iOS 导航栏整体的解决方案。
 
-## 特点介绍：
+## 特点介绍
 - [x] 1.解决iOS导航栏显示／隐藏时的BUG。[问题描述](http://ask.csdn.net/questions/248158)
 - [x] 2.解决无法获取系统返回按钮点击事件问题。
 - [x] 3.解决无法获取返回手势回调问题。
@@ -19,6 +19,6 @@ pod 'LDNavigationSolution', '~> 1.0.1'
 
 ## Carthage
 ```ogdl
-github "Alamofire/Alamofire" ~> 4.4
+github "l1Dan/LDNavigationSolution" ~> 1.0.1
 ```
 ## 详细使用见Demo
