@@ -9,7 +9,7 @@ A iOS navigation solution.
 - [x] 4.解决自定义导航栏之后无法使用系统返回手势问题。
 - [x] 5.解决手势返回无法POP到任意控制器问题。
 
-## 支持iOS7及以上版本，支持Swift调用，支持CocoaPods。
+## 支持iOS7及以上版本。
 
 ## 安装
 ## CocoaPods
