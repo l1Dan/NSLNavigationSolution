@@ -9,6 +9,10 @@
 #import "LDBaseViewController.h"
 #import "AppDelegate.h"
 
+@interface LDBaseViewController()
+@property (nonatomic, strong) UILabel *noteLabel;
+@end
+
 @implementation LDBaseViewController
 + (void)initialize {
     [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
@@ -20,6 +24,21 @@
     
     self.ld_navigationBarTranslucent = NO;
     self.navigationItem.backBarButtonItem = [self backBarButtonItem];
+    
+    if ([self.navigationController.viewControllers count] < 4) {
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.frame = CGRectMake(100, 100, 100, 44);
+        button.backgroundColor = [UIColor blackColor];
+        [button setTitle:@"下一页" forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(clickNextButton:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:button];
+    }
+    
+    self.noteLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 150, 0, 0)];
+    self.noteLabel.backgroundColor = [UIColor blackColor];
+    self.noteLabel.textColor = [UIColor whiteColor];
+    self.noteLabel.numberOfLines = 0;
+    [self.view addSubview:self.noteLabel];
 }
 
 - (UIBarButtonItem *)backBarButtonItem {
@@ -32,5 +51,17 @@
     AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     [delegate.globalView changeSwitchStatus:self.ld_navigationBarTranslucent];
 }
+
+#pragma mark - Public Method
+- (void)setNote:(NSString *)note {
+    if ([note length] == 0) {
+        return;
+    }
+    
+    self.noteLabel.text = note;
+    [self.noteLabel sizeToFit];
+}
+
+- (void)clickNextButton:(UIButton *)button { }
 
 @end

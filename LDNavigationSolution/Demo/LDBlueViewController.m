@@ -9,10 +9,7 @@
 #import "LDBlueViewController.h"
 #import "LDOrangeViewController.h"
 #import "LDGrayViewController.h"
-
-@interface LDBlueViewController ()<UINavigationControllerCustomizable, UIAlertViewDelegate>
-
-@end
+#import "LDBrownViewController.h"
 
 @implementation LDBlueViewController
 
@@ -23,27 +20,9 @@
     self.navigationItem.title = @"第 1 页";
 }
 
-#pragma mark - UINavigationControllerCustomizable
-// 监听点击返回和手势返回
-- (BOOL)navigationController:(UINavigationController *)navigationController shouldJumpToViewControllerUsingGesture:(BOOL)usingGesture {
-    if (usingGesture) {
-        navigationController.ld_jumpToViewController = [[LDOrangeViewController alloc] init];
-        return YES;
-    } else {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"温馨提示" message:@"是否返回到上个页面？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-        [alertView show];
-        
-        return NO;
-    }
-}
-
-#pragma mark - UIAlertViewDelegate
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex != 0) {
-        self.navigationController.ld_jumpToViewController = [[LDGrayViewController alloc] init];
-        
-        [self.navigationController popViewControllerAnimated:YES];
-    }
+#pragma mark - Public method
+- (void)clickNextButton:(UIButton *)button {
+    [self.navigationController pushViewController:[[LDBrownViewController alloc] init] animated:YES];
 }
 
 @end

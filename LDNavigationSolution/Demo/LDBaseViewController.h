@@ -10,5 +10,8 @@
 #import "UINavigationController+LDNavigationSolution.h"
 
 @interface LDBaseViewController : UIViewController
+@property (nonatomic, copy) NSString *note;
+
+- (void)clickNextButton:(UIButton *)button;
 
 @end

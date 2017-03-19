@@ -7,6 +7,7 @@
 //
 
 #import "LDGrayViewController.h"
+#import "LDOrangeViewController.h"
 
 @implementation LDGrayViewController
 
@@ -15,6 +16,11 @@
     
     self.view.backgroundColor = [UIColor grayColor];
     self.navigationItem.title = @"第 3 页";
+}
+
+#pragma mark - Public method
+- (void)clickNextButton:(UIButton *)button {
+    [self.navigationController pushViewController:[[LDOrangeViewController alloc] init] animated:YES];
 }
 
 @end

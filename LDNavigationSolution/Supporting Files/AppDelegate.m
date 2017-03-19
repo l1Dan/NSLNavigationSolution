@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "UINavigationController+LDNavigationSolution.h"
-#import "LDGrayViewController.h"
+#import "LDBlueViewController.h"
 
 @interface AppDelegate () <LDGlobalSwitchViewDelegate>
 
@@ -28,7 +28,7 @@
 }
 
 - (UIViewController *)rootViewController {
-    UIViewController *rootViewController = [[LDGrayViewController alloc] init];
+    UIViewController *rootViewController = [[LDBlueViewController alloc] init];
     return [[UINavigationController alloc] initWithRootViewController:rootViewController];
 }
 
