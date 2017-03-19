@@ -6,8 +6,8 @@
 //  Copyright © 2017 Dennis Lee. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "LDBaseViewController.h"
 
-@interface LDBrownViewController : UIViewController
+@interface LDBrownViewController : LDBaseViewController
 
 @end

@@ -7,11 +7,6 @@
 //
 
 #import "LDBrownViewController.h"
-#import "UINavigationController+LDNavigationSolution.h"
-
-@interface LDBrownViewController ()
-
-@end
 
 @implementation LDBrownViewController
 

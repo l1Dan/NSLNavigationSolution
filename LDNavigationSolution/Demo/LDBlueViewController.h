@@ -6,8 +6,8 @@
 //  Copyright © 2017 Dennis Lee. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "LDBaseViewController.h"
 
-@interface LDBlueViewController : UIViewController
+@interface LDBlueViewController : LDBaseViewController
 
 @end

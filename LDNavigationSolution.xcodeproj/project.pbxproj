@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95253B511E7ECE0C00E37D2C /* LDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95253B501E7ECE0C00E37D2C /* LDBaseViewController.m */; };
 		95380C731E7E74DC00CBBB32 /* LDGrayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95380C721E7E74DC00CBBB32 /* LDGrayViewController.m */; };
 		95380C761E7E74EE00CBBB32 /* LDOrangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95380C751E7E74EE00CBBB32 /* LDOrangeViewController.m */; };
 		95380C791E7E74FE00CBBB32 /* LDBlueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95380C781E7E74FE00CBBB32 /* LDBlueViewController.m */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		95253B4F1E7ECE0C00E37D2C /* LDBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDBaseViewController.h; sourceTree = "<group>"; };
+		95253B501E7ECE0C00E37D2C /* LDBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDBaseViewController.m; sourceTree = "<group>"; };
 		95380C711E7E74DC00CBBB32 /* LDGrayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDGrayViewController.h; sourceTree = "<group>"; };
 		95380C721E7E74DC00CBBB32 /* LDGrayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDGrayViewController.m; sourceTree = "<group>"; };
 		95380C741E7E74EE00CBBB32 /* LDOrangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDOrangeViewController.h; sourceTree = "<group>"; };
@@ -63,7 +66,6 @@
 				95380C7E1E7E780F00CBBB32 /* LDGlobalSwitchView.m */,
 				95380C801E7E781C00CBBB32 /* LDGlobalSwitchView.xib */,
 			);
-			name = View;
 			path = View;
 			sourceTree = "<group>";
 		};
@@ -126,6 +128,8 @@
 				95380C721E7E74DC00CBBB32 /* LDGrayViewController.m */,
 				95380C741E7E74EE00CBBB32 /* LDOrangeViewController.h */,
 				95380C751E7E74EE00CBBB32 /* LDOrangeViewController.m */,
+				95253B4F1E7ECE0C00E37D2C /* LDBaseViewController.h */,
+				95253B501E7ECE0C00E37D2C /* LDBaseViewController.m */,
 				9594E8651E7BE6D100900F46 /* LaunchScreen.storyboard */,
 				9594E8601E7BE6D100900F46 /* Main.storyboard */,
 			);
@@ -206,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9594E8701E7BE72E00900F46 /* UINavigationController+LDNavigationSolution.m in Sources */,
+				95253B511E7ECE0C00E37D2C /* LDBaseViewController.m in Sources */,
 				95380C7C1E7E751C00CBBB32 /* LDBrownViewController.m in Sources */,
 				95380C791E7E74FE00CBBB32 /* LDBlueViewController.m in Sources */,
 				95380C731E7E74DC00CBBB32 /* LDGrayViewController.m in Sources */,

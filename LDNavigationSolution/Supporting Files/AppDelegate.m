@@ -7,16 +7,29 @@
 //
 
 #import "AppDelegate.h"
+#import "UINavigationController+LDNavigationSolution.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () <LDGlobalSwitchViewDelegate>
 
 @end
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    if (!_globalView) {
+        _globalView = [LDGlobalSwitchView globalSwitchView];
+        _globalView.frame = CGRectMake(20, 300, 100, 100);
+        _globalView.delegate = self;
+        [self.window.rootViewController.view addSubview:_globalView];
+    }
+    
     return YES;
+}
+
+#pragma mark - LDGlobalSwitchViewDelegate
+- (void)globalSwitchView:(LDGlobalSwitchView *)view didClickSwitch:(UISwitch *)aSwitch {
+    UIViewController *topViewController = [(UINavigationController *)self.window.rootViewController topViewController];
+    topViewController.ld_navigationBarTranslucent = aSwitch.isOn;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
