@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95380C731E7E74DC00CBBB32 /* LDGrayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95380C721E7E74DC00CBBB32 /* LDGrayViewController.m */; };
+		95380C761E7E74EE00CBBB32 /* LDOrangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95380C751E7E74EE00CBBB32 /* LDOrangeViewController.m */; };
+		95380C791E7E74FE00CBBB32 /* LDBlueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95380C781E7E74FE00CBBB32 /* LDBlueViewController.m */; };
+		95380C7C1E7E751C00CBBB32 /* LDBrownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95380C7B1E7E751C00CBBB32 /* LDBrownViewController.m */; };
+		95380C7F1E7E780F00CBBB32 /* LDGlobalSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95380C7E1E7E780F00CBBB32 /* LDGlobalSwitchView.m */; };
+		95380C811E7E781C00CBBB32 /* LDGlobalSwitchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95380C801E7E781C00CBBB32 /* LDGlobalSwitchView.xib */; };
 		9594E8591E7BE6D100900F46 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594E8581E7BE6D100900F46 /* main.m */; };
 		9594E85C1E7BE6D100900F46 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594E85B1E7BE6D100900F46 /* AppDelegate.m */; };
-		9594E85F1E7BE6D100900F46 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594E85E1E7BE6D100900F46 /* ViewController.m */; };
 		9594E8621E7BE6D100900F46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9594E8601E7BE6D100900F46 /* Main.storyboard */; };
 		9594E8641E7BE6D100900F46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9594E8631E7BE6D100900F46 /* Assets.xcassets */; };
 		9594E8671E7BE6D100900F46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9594E8651E7BE6D100900F46 /* LaunchScreen.storyboard */; };
@@ -17,12 +22,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		95380C711E7E74DC00CBBB32 /* LDGrayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDGrayViewController.h; sourceTree = "<group>"; };
+		95380C721E7E74DC00CBBB32 /* LDGrayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDGrayViewController.m; sourceTree = "<group>"; };
+		95380C741E7E74EE00CBBB32 /* LDOrangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDOrangeViewController.h; sourceTree = "<group>"; };
+		95380C751E7E74EE00CBBB32 /* LDOrangeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDOrangeViewController.m; sourceTree = "<group>"; };
+		95380C771E7E74FE00CBBB32 /* LDBlueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDBlueViewController.h; sourceTree = "<group>"; };
+		95380C781E7E74FE00CBBB32 /* LDBlueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDBlueViewController.m; sourceTree = "<group>"; };
+		95380C7A1E7E751C00CBBB32 /* LDBrownViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDBrownViewController.h; sourceTree = "<group>"; };
+		95380C7B1E7E751C00CBBB32 /* LDBrownViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDBrownViewController.m; sourceTree = "<group>"; };
+		95380C7D1E7E780F00CBBB32 /* LDGlobalSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDGlobalSwitchView.h; sourceTree = "<group>"; };
+		95380C7E1E7E780F00CBBB32 /* LDGlobalSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDGlobalSwitchView.m; sourceTree = "<group>"; };
+		95380C801E7E781C00CBBB32 /* LDGlobalSwitchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LDGlobalSwitchView.xib; sourceTree = "<group>"; };
 		9594E8541E7BE6D100900F46 /* LDNavigationSolution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LDNavigationSolution.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9594E8581E7BE6D100900F46 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9594E85A1E7BE6D100900F46 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9594E85B1E7BE6D100900F46 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9594E85D1E7BE6D100900F46 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9594E85E1E7BE6D100900F46 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		9594E8611E7BE6D100900F46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9594E8631E7BE6D100900F46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9594E8661E7BE6D100900F46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -94,10 +108,18 @@
 			children = (
 				9594E8651E7BE6D100900F46 /* LaunchScreen.storyboard */,
 				9594E8601E7BE6D100900F46 /* Main.storyboard */,
-				9594E85D1E7BE6D100900F46 /* ViewController.h */,
-				9594E85E1E7BE6D100900F46 /* ViewController.m */,
+				95380C7A1E7E751C00CBBB32 /* LDBrownViewController.h */,
+				95380C7B1E7E751C00CBBB32 /* LDBrownViewController.m */,
+				95380C711E7E74DC00CBBB32 /* LDGrayViewController.h */,
+				95380C721E7E74DC00CBBB32 /* LDGrayViewController.m */,
+				95380C771E7E74FE00CBBB32 /* LDBlueViewController.h */,
+				95380C781E7E74FE00CBBB32 /* LDBlueViewController.m */,
+				95380C741E7E74EE00CBBB32 /* LDOrangeViewController.h */,
+				95380C751E7E74EE00CBBB32 /* LDOrangeViewController.m */,
+				95380C7D1E7E780F00CBBB32 /* LDGlobalSwitchView.h */,
+				95380C7E1E7E780F00CBBB32 /* LDGlobalSwitchView.m */,
+				95380C801E7E781C00CBBB32 /* LDGlobalSwitchView.xib */,
 			);
-			name = Demo;
 			path = Demo;
 			sourceTree = "<group>";
 		};
@@ -127,13 +149,13 @@
 		9594E84C1E7BE6D100900F46 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = LD;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Dennis Lee";
 				TargetAttributes = {
 					9594E8531E7BE6D100900F46 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = RQF6WX2VD9;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -161,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9594E8671E7BE6D100900F46 /* LaunchScreen.storyboard in Resources */,
+				95380C811E7E781C00CBBB32 /* LDGlobalSwitchView.xib in Resources */,
 				9594E8641E7BE6D100900F46 /* Assets.xcassets in Resources */,
 				9594E8621E7BE6D100900F46 /* Main.storyboard in Resources */,
 			);
@@ -173,9 +196,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9594E85F1E7BE6D100900F46 /* ViewController.m in Sources */,
 				9594E8701E7BE72E00900F46 /* UINavigationController+LDNavigationSolution.m in Sources */,
+				95380C7C1E7E751C00CBBB32 /* LDBrownViewController.m in Sources */,
+				95380C791E7E74FE00CBBB32 /* LDBlueViewController.m in Sources */,
+				95380C731E7E74DC00CBBB32 /* LDGrayViewController.m in Sources */,
 				9594E85C1E7BE6D100900F46 /* AppDelegate.m in Sources */,
+				95380C7F1E7E780F00CBBB32 /* LDGlobalSwitchView.m in Sources */,
+				95380C761E7E74EE00CBBB32 /* LDOrangeViewController.m in Sources */,
 				9594E8591E7BE6D100900F46 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,9 +325,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = RQF6WX2VD9;
-				INFOPLIST_FILE = LDNavigationSolution/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/LDNavigationSolution/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lidan.LDNavigationSolution;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -311,9 +339,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = RQF6WX2VD9;
-				INFOPLIST_FILE = LDNavigationSolution/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/LDNavigationSolution/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lidan.LDNavigationSolution;
 				PRODUCT_NAME = "$(TARGET_NAME)";

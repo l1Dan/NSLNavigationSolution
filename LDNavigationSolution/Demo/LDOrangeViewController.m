@@ -7,8 +7,10 @@
 //
 
 #import "LDOrangeViewController.h"
+#import "LDGrayViewController.h"
+#import "UINavigationController+LDNavigationSolution.h"
 
-@interface LDOrangeViewController ()
+@interface LDOrangeViewController () <UINavigationControllerCustomizable>
 
 @end
 
@@ -16,22 +18,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - UINavigationControllerCustomizable
+- (BOOL)navigationController:(UINavigationController *)navigationController shouldJumpToViewControllerUsingGesture:(BOOL)usingGesture {
+    navigationController.ld_jumpToViewController = [[LDGrayViewController alloc] init];
+    // or
+    //    for (UIViewController *vc in [navigationController viewControllers]) {
+    //        if ([vc isKindOfClass:[LDGrayViewController class]]) {
+    //            navigationController.ld_jumpToViewController = vc;
+    //            break;
+    //        }
+    //    }
+    
+    return YES;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

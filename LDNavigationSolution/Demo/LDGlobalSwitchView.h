@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LDGlobalSwitchView : UIVew
-
+@interface LDGlobalSwitchView : UIView
++ (instancetype)globalSwitchView;
 @end

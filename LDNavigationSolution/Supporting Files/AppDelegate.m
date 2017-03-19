@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "LDGlobalSwitchView.h"
 
 @interface AppDelegate ()
 
@@ -14,12 +15,21 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
+    
+    UIWindow *keyWindow = [[[UIApplication sharedApplication] delegate] window];
+    UIView *view = [[keyWindow rootViewController] view];
+    
+    self.globalView = [LDGlobalSwitchView globalSwitchView];
+    self.globalView.frame = CGRectMake(10, 400, 100, 100);
+    [view addSubview:self.globalView];
+    
     return YES;
 }
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -9,5 +9,7 @@
 #import "LDGlobalSwitchView.h"
 
 @implementation LDGlobalSwitchView
-
++ (instancetype)globalSwitchView {
+    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil] lastObject];
+}
 @end
