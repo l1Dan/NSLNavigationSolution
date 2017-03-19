@@ -33,6 +33,8 @@ void ld_method_exchangeImplementations(Class cls, SEL oringinal, SEL swizzled) {
     [self ld_viewWillAppear:animated];
 
     // 解决导航栏闪烁问题
+    if (!self.ld_navigationBarTranslucent) { self.ld_navigationBarTranslucent = NO; }
+    
     [UIView animateWithDuration:0.1 animations:^{
         self.navigationController.navigationBar.alpha = self.ld_navigationBarTranslucent ? 0.0 : 1.0;
     }];
@@ -53,8 +55,8 @@ void ld_method_exchangeImplementations(Class cls, SEL oringinal, SEL swizzled) {
 }
 
 - (void)setLd_navigationBarTranslucent:(BOOL)ld_navigationBarTranslucent {
-    self.navigationController.navigationBar.alpha = ld_navigationBarTranslucent ? 0.0 : 1.0;
     objc_setAssociatedObject(self, @selector(ld_navigationBarTranslucent), @(ld_navigationBarTranslucent), OBJC_ASSOCIATION_ASSIGN);
+    self.navigationController.navigationBar.alpha = ld_navigationBarTranslucent ? 0.0 : 1.0;
 }
 
 @end

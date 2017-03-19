@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "LDGlobalSwitchView.h"
 
 @interface AppDelegate ()
 
@@ -17,17 +16,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
-    [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
-    [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
-    
-    UIWindow *keyWindow = [[[UIApplication sharedApplication] delegate] window];
-    UIView *view = [[keyWindow rootViewController] view];
-    
-    self.globalView = [LDGlobalSwitchView globalSwitchView];
-    self.globalView.frame = CGRectMake(10, 400, 100, 100);
-    [view addSubview:self.globalView];
-    
     return YES;
 }
 

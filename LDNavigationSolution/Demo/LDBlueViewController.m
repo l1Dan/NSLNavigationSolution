@@ -9,17 +9,13 @@
 #import "LDBlueViewController.h"
 #import "UINavigationController+LDNavigationSolution.h"
 #import "LDOrangeViewController.h"
+#import "LDGrayViewController.h"
 
 @interface LDBlueViewController ()<UINavigationControllerCustomizable, UIAlertViewDelegate>
 
 @end
 
 @implementation LDBlueViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-}
 
 #pragma mark - UINavigationControllerCustomizable
 // 监听点击返回和手势返回
@@ -37,6 +33,8 @@
 
 #pragma mark - UIAlertViewDelegate
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    self.navigationController.ld_jumpToViewController = [[LDGrayViewController alloc] init];
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 

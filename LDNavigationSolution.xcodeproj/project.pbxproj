@@ -56,6 +56,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		95253B4E1E7ECACD00E37D2C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				95380C7D1E7E780F00CBBB32 /* LDGlobalSwitchView.h */,
+				95380C7E1E7E780F00CBBB32 /* LDGlobalSwitchView.m */,
+				95380C801E7E781C00CBBB32 /* LDGlobalSwitchView.xib */,
+			);
+			name = View;
+			path = View;
+			sourceTree = "<group>";
+		};
 		9594E84B1E7BE6D100900F46 = {
 			isa = PBXGroup;
 			children = (
@@ -106,19 +117,17 @@
 		9597B5FC1E7E64A40039C3FE /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				9594E8651E7BE6D100900F46 /* LaunchScreen.storyboard */,
-				9594E8601E7BE6D100900F46 /* Main.storyboard */,
-				95380C711E7E74DC00CBBB32 /* LDGrayViewController.h */,
-				95380C721E7E74DC00CBBB32 /* LDGrayViewController.m */,
+				95253B4E1E7ECACD00E37D2C /* View */,
 				95380C771E7E74FE00CBBB32 /* LDBlueViewController.h */,
 				95380C781E7E74FE00CBBB32 /* LDBlueViewController.m */,
 				95380C7A1E7E751C00CBBB32 /* LDBrownViewController.h */,
 				95380C7B1E7E751C00CBBB32 /* LDBrownViewController.m */,
+				95380C711E7E74DC00CBBB32 /* LDGrayViewController.h */,
+				95380C721E7E74DC00CBBB32 /* LDGrayViewController.m */,
 				95380C741E7E74EE00CBBB32 /* LDOrangeViewController.h */,
 				95380C751E7E74EE00CBBB32 /* LDOrangeViewController.m */,
-				95380C7D1E7E780F00CBBB32 /* LDGlobalSwitchView.h */,
-				95380C7E1E7E780F00CBBB32 /* LDGlobalSwitchView.m */,
-				95380C801E7E781C00CBBB32 /* LDGlobalSwitchView.xib */,
+				9594E8651E7BE6D100900F46 /* LaunchScreen.storyboard */,
+				9594E8601E7BE6D100900F46 /* Main.storyboard */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
