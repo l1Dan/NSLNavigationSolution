@@ -1,4 +1,4 @@
-# LDNavigationSolution
+# NSLNavigationSolution
 A iOS navigation solution.
 一个 iOS 导航栏整体的解决方案。
 
@@ -9,12 +9,12 @@ A iOS navigation solution.
 - [x] 4.解决自定义导航栏之后无法使用系统返回手势问题。
 - [x] 5.解决手势返回无法POP到任意控制器问题。
 
-## 支持iOS7及以上版本。
+## 支持iOS8及以上版本。
 
 ## 安装
 ## CocoaPods
 ```ruby
-pod 'LDNavigationSolution', '~> 1.0.1'
+pod 'NSLNavigationSolution', '~> 1.1.0'
 ```
 
 ## 详细使用见Demo
