@@ -9,29 +9,27 @@
 #import "UINavigationController+LDNavigationSolution.h"
 #import <objc/runtime.h>
 
-void ld_method_exchangeImplementations(Class cls, SEL oringinal, SEL swizzled) {
-    Method originalMethod = class_getInstanceMethod(cls, oringinal);
-    Method swizzledMethod = class_getInstanceMethod(cls, swizzled);
+static void methodExchangeImplementations(Class class, SEL oringinal, SEL swizzled) {
+    Method originalMethod = class_getInstanceMethod(class, oringinal);
+    Method swizzledMethod = class_getInstanceMethod(class, swizzled);
     
-    BOOL didAddMethod = class_addMethod(cls, oringinal, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
-    if (didAddMethod) {
-        class_replaceMethod(cls, swizzled, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
+    BOOL success = class_addMethod(class, oringinal, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
+    if (success) {
+        class_replaceMethod(class, swizzled, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
     } else {
         method_exchangeImplementations(originalMethod, swizzledMethod);
     }
 }
 
-@implementation UIViewController (LDNavigationSolution)
-+ (void)initialize {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        ld_method_exchangeImplementations([self class],  @selector(viewWillAppear:), @selector(ld_viewWillAppear:));
-    });
+static void __attribute__((constructor)) initialize(void) {
+    methodExchangeImplementations([UIViewController class], NSSelectorFromString(@"viewWillAppear:"), NSSelectorFromString(@"ld_viewWillAppear:)"));
+    methodExchangeImplementations([UINavigationController class], NSSelectorFromString(@"viewDidLoad"), NSSelectorFromString(@"ld_viewDidLoad"));
+    methodExchangeImplementations([UINavigationController class], NSSelectorFromString(@"navigationBar:shouldPopItem:"), NSSelectorFromString(@"ld_navigationBar:shouldPopItem:"));
 }
 
+@implementation UIViewController (LDNavigationSolution)
 - (void)ld_viewWillAppear:(BOOL)animated {
     [self ld_viewWillAppear:animated];
-
     // 解决导航栏闪烁问题
     [UIView animateWithDuration:0.1 animations:^{
         self.navigationController.navigationBar.alpha = self.ld_navigationBarTranslucent ? 0.0 : 1.0;
@@ -90,15 +88,6 @@ static const char * INTERACTIVE_DELEGATE = "INTERACTIVE_DELEGATE";
 @end
 
 @implementation UINavigationController (LDNavigationSolution)
-+ (void)initialize {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        ld_method_exchangeImplementations([self class], @selector(navigationBar:shouldPopItem:), @selector(ld_navigationBar:shouldPopItem:));
-        ld_method_exchangeImplementations([self class], @selector(viewDidLoad), @selector(ld_viewDidLoad));
-    });
-}
-
-#pragma mark -
 - (void)ld_viewDidLoad {
     [self ld_viewDidLoad];
 	
