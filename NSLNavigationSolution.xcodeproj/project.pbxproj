@@ -19,19 +19,34 @@
 		9594E85C1E7BE6D100900F46 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594E85B1E7BE6D100900F46 /* AppDelegate.m */; };
 		9594E8641E7BE6D100900F46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9594E8631E7BE6D100900F46 /* Assets.xcassets */; };
 		9594E8701E7BE72E00900F46 /* UINavigationController+NSLNavigationSolution.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594E86F1E7BE72E00900F46 /* UINavigationController+NSLNavigationSolution.m */; };
-		95C0C5C81E8E5CB100B2A902 /* NSLNavigationSolution.h in Headers */ = {isa = PBXBuildFile; fileRef = 95C0C5C61E8E5CB100B2A902 /* NSLNavigationSolution.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		95C0C5CB1E8E5CB100B2A902 /* NSLNavigationSolution.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C0C5C41E8E5CB100B2A902 /* NSLNavigationSolution.framework */; };
-		95C0C5CC1E8E5CB100B2A902 /* NSLNavigationSolution.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95C0C5C41E8E5CB100B2A902 /* NSLNavigationSolution.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		95C0C5D11E8E5D4800B2A902 /* UINavigationController+NSLNavigationSolution.h in Headers */ = {isa = PBXBuildFile; fileRef = 9594E86E1E7BE72E00900F46 /* UINavigationController+NSLNavigationSolution.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95C0C5E01E8E5F9900B2A902 /* NSLNavigationSolution.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C0C5D71E8E5F9900B2A902 /* NSLNavigationSolution.framework */; };
+		95C0C5E71E8E5F9900B2A902 /* NSLNavigationSolutionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C0C5E61E8E5F9900B2A902 /* NSLNavigationSolutionTests.m */; };
+		95C0C5E91E8E5F9900B2A902 /* NSLNavigationSolution.h in Headers */ = {isa = PBXBuildFile; fileRef = 95C0C5D91E8E5F9900B2A902 /* NSLNavigationSolution.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95C0C5EC1E8E5F9900B2A902 /* NSLNavigationSolution.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C0C5D71E8E5F9900B2A902 /* NSLNavigationSolution.framework */; };
+		95C0C5ED1E8E5F9900B2A902 /* NSLNavigationSolution.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95C0C5D71E8E5F9900B2A902 /* NSLNavigationSolution.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95F529F41E8E4A3F007AD7E5 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95F529F31E8E4A3F007AD7E5 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		95C0C5C91E8E5CB100B2A902 /* PBXContainerItemProxy */ = {
+		95C0C5E11E8E5F9900B2A902 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9594E84C1E7BE6D100900F46 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 95C0C5C31E8E5CB100B2A902;
+			remoteGlobalIDString = 95C0C5D61E8E5F9900B2A902;
+			remoteInfo = NSLNavigationSolution;
+		};
+		95C0C5E31E8E5F9900B2A902 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9594E84C1E7BE6D100900F46 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9594E8531E7BE6D100900F46;
+			remoteInfo = NSLNavigationSolutionDemo;
+		};
+		95C0C5EA1E8E5F9900B2A902 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9594E84C1E7BE6D100900F46 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 95C0C5D61E8E5F9900B2A902;
 			remoteInfo = NSLNavigationSolution;
 		};
 /* End PBXContainerItemProxy section */
@@ -43,7 +58,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				95C0C5CC1E8E5CB100B2A902 /* NSLNavigationSolution.framework in Embed Frameworks */,
+				95C0C5ED1E8E5F9900B2A902 /* NSLNavigationSolution.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,9 +89,14 @@
 		9594E8681E7BE6D100900F46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9594E86E1E7BE72E00900F46 /* UINavigationController+NSLNavigationSolution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+NSLNavigationSolution.h"; sourceTree = "<group>"; };
 		9594E86F1E7BE72E00900F46 /* UINavigationController+NSLNavigationSolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+NSLNavigationSolution.m"; sourceTree = "<group>"; };
-		95C0C5C41E8E5CB100B2A902 /* NSLNavigationSolution.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NSLNavigationSolution.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C0C5C61E8E5CB100B2A902 /* NSLNavigationSolution.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSLNavigationSolution.h; sourceTree = "<group>"; };
 		95C0C5C71E8E5CB100B2A902 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95C0C5D71E8E5F9900B2A902 /* NSLNavigationSolution.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NSLNavigationSolution.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95C0C5D91E8E5F9900B2A902 /* NSLNavigationSolution.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSLNavigationSolution.h; sourceTree = "<group>"; };
+		95C0C5DA1E8E5F9900B2A902 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95C0C5DF1E8E5F9900B2A902 /* NSLNavigationSolutionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NSLNavigationSolutionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		95C0C5E61E8E5F9900B2A902 /* NSLNavigationSolutionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSLNavigationSolutionTests.m; sourceTree = "<group>"; };
+		95C0C5E81E8E5F9900B2A902 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95F529F31E8E4A3F007AD7E5 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,14 +105,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95C0C5CB1E8E5CB100B2A902 /* NSLNavigationSolution.framework in Frameworks */,
+				95C0C5EC1E8E5F9900B2A902 /* NSLNavigationSolution.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		95C0C5C01E8E5CB100B2A902 /* Frameworks */ = {
+		95C0C5D31E8E5F9900B2A902 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95C0C5DC1E8E5F9900B2A902 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95C0C5E01E8E5F9900B2A902 /* NSLNavigationSolution.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +151,8 @@
 			children = (
 				9594E8561E7BE6D100900F46 /* NSLNavigationSolution */,
 				95C0C5C51E8E5CB100B2A902 /* NSLNavigationSolution */,
+				95C0C5D81E8E5F9900B2A902 /* NSLNavigationSolution */,
+				95C0C5E51E8E5F9900B2A902 /* NSLNavigationSolutionTests */,
 				9594E8551E7BE6D100900F46 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -131,7 +161,8 @@
 			isa = PBXGroup;
 			children = (
 				9594E8541E7BE6D100900F46 /* NSLNavigationSolutionDemo.app */,
-				95C0C5C41E8E5CB100B2A902 /* NSLNavigationSolution.framework */,
+				95C0C5D71E8E5F9900B2A902 /* NSLNavigationSolution.framework */,
+				95C0C5DF1E8E5F9900B2A902 /* NSLNavigationSolutionTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -196,15 +227,32 @@
 			path = NSLNavigationSolution;
 			sourceTree = "<group>";
 		};
+		95C0C5D81E8E5F9900B2A902 /* NSLNavigationSolution */ = {
+			isa = PBXGroup;
+			children = (
+				95C0C5D91E8E5F9900B2A902 /* NSLNavigationSolution.h */,
+				95C0C5DA1E8E5F9900B2A902 /* Info.plist */,
+			);
+			path = NSLNavigationSolution;
+			sourceTree = "<group>";
+		};
+		95C0C5E51E8E5F9900B2A902 /* NSLNavigationSolutionTests */ = {
+			isa = PBXGroup;
+			children = (
+				95C0C5E61E8E5F9900B2A902 /* NSLNavigationSolutionTests.m */,
+				95C0C5E81E8E5F9900B2A902 /* Info.plist */,
+			);
+			path = NSLNavigationSolutionTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		95C0C5C11E8E5CB100B2A902 /* Headers */ = {
+		95C0C5D41E8E5F9900B2A902 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95C0C5C81E8E5CB100B2A902 /* NSLNavigationSolution.h in Headers */,
-				95C0C5D11E8E5D4800B2A902 /* UINavigationController+NSLNavigationSolution.h in Headers */,
+				95C0C5E91E8E5F9900B2A902 /* NSLNavigationSolution.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,21 +271,21 @@
 			buildRules = (
 			);
 			dependencies = (
-				95C0C5CA1E8E5CB100B2A902 /* PBXTargetDependency */,
+				95C0C5EB1E8E5F9900B2A902 /* PBXTargetDependency */,
 			);
 			name = NSLNavigationSolutionDemo;
 			productName = LDNavigationSolution;
 			productReference = 9594E8541E7BE6D100900F46 /* NSLNavigationSolutionDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		95C0C5C31E8E5CB100B2A902 /* NSLNavigationSolution */ = {
+		95C0C5D61E8E5F9900B2A902 /* NSLNavigationSolution */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 95C0C5CD1E8E5CB100B2A902 /* Build configuration list for PBXNativeTarget "NSLNavigationSolution" */;
+			buildConfigurationList = 95C0C5EE1E8E5F9900B2A902 /* Build configuration list for PBXNativeTarget "NSLNavigationSolution" */;
 			buildPhases = (
-				95C0C5BF1E8E5CB100B2A902 /* Sources */,
-				95C0C5C01E8E5CB100B2A902 /* Frameworks */,
-				95C0C5C11E8E5CB100B2A902 /* Headers */,
-				95C0C5C21E8E5CB100B2A902 /* Resources */,
+				95C0C5D21E8E5F9900B2A902 /* Sources */,
+				95C0C5D31E8E5F9900B2A902 /* Frameworks */,
+				95C0C5D41E8E5F9900B2A902 /* Headers */,
+				95C0C5D51E8E5F9900B2A902 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -245,8 +293,27 @@
 			);
 			name = NSLNavigationSolution;
 			productName = NSLNavigationSolution;
-			productReference = 95C0C5C41E8E5CB100B2A902 /* NSLNavigationSolution.framework */;
+			productReference = 95C0C5D71E8E5F9900B2A902 /* NSLNavigationSolution.framework */;
 			productType = "com.apple.product-type.framework";
+		};
+		95C0C5DE1E8E5F9900B2A902 /* NSLNavigationSolutionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95C0C5F11E8E5F9900B2A902 /* Build configuration list for PBXNativeTarget "NSLNavigationSolutionTests" */;
+			buildPhases = (
+				95C0C5DB1E8E5F9900B2A902 /* Sources */,
+				95C0C5DC1E8E5F9900B2A902 /* Frameworks */,
+				95C0C5DD1E8E5F9900B2A902 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				95C0C5E21E8E5F9900B2A902 /* PBXTargetDependency */,
+				95C0C5E41E8E5F9900B2A902 /* PBXTargetDependency */,
+			);
+			name = NSLNavigationSolutionTests;
+			productName = NSLNavigationSolutionTests;
+			productReference = 95C0C5DF1E8E5F9900B2A902 /* NSLNavigationSolutionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -263,10 +330,16 @@
 						DevelopmentTeam = Y7673FFN4G;
 						ProvisioningStyle = Automatic;
 					};
-					95C0C5C31E8E5CB100B2A902 = {
+					95C0C5D61E8E5F9900B2A902 = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = Y7673FFN4G;
 						ProvisioningStyle = Automatic;
+					};
+					95C0C5DE1E8E5F9900B2A902 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = Y7673FFN4G;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9594E8531E7BE6D100900F46;
 					};
 				};
 			};
@@ -284,7 +357,8 @@
 			projectRoot = "";
 			targets = (
 				9594E8531E7BE6D100900F46 /* NSLNavigationSolutionDemo */,
-				95C0C5C31E8E5CB100B2A902 /* NSLNavigationSolution */,
+				95C0C5D61E8E5F9900B2A902 /* NSLNavigationSolution */,
+				95C0C5DE1E8E5F9900B2A902 /* NSLNavigationSolutionTests */,
 			);
 		};
 /* End PBXProject section */
@@ -300,7 +374,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		95C0C5C21E8E5CB100B2A902 /* Resources */ = {
+		95C0C5D51E8E5F9900B2A902 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95C0C5DD1E8E5F9900B2A902 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -327,20 +408,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		95C0C5BF1E8E5CB100B2A902 /* Sources */ = {
+		95C0C5D21E8E5F9900B2A902 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		95C0C5DB1E8E5F9900B2A902 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95C0C5E71E8E5F9900B2A902 /* NSLNavigationSolutionTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		95C0C5CA1E8E5CB100B2A902 /* PBXTargetDependency */ = {
+		95C0C5E21E8E5F9900B2A902 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 95C0C5C31E8E5CB100B2A902 /* NSLNavigationSolution */;
-			targetProxy = 95C0C5C91E8E5CB100B2A902 /* PBXContainerItemProxy */;
+			target = 95C0C5D61E8E5F9900B2A902 /* NSLNavigationSolution */;
+			targetProxy = 95C0C5E11E8E5F9900B2A902 /* PBXContainerItemProxy */;
+		};
+		95C0C5E41E8E5F9900B2A902 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9594E8531E7BE6D100900F46 /* NSLNavigationSolutionDemo */;
+			targetProxy = 95C0C5E31E8E5F9900B2A902 /* PBXContainerItemProxy */;
+		};
+		95C0C5EB1E8E5F9900B2A902 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 95C0C5D61E8E5F9900B2A902 /* NSLNavigationSolution */;
+			targetProxy = 95C0C5EA1E8E5F9900B2A902 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -445,7 +544,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/NSLNavigationSolution/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lidan.NDLNavigationSolutionDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lidan.NSLNavigationSolutionDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
@@ -461,13 +560,13 @@
 				INFOPLIST_FILE = "$(SRCROOT)/NSLNavigationSolution/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lidan.NDLNavigationSolutionDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lidan.NSLNavigationSolutionDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
-		95C0C5CE1E8E5CB100B2A902 /* Debug */ = {
+		95C0C5EF1E8E5F9900B2A902 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -482,15 +581,16 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lidan.NDLNavigationSolution;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lidan.NSLNavigationSolution;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		95C0C5CF1E8E5CB100B2A902 /* Release */ = {
+		95C0C5F01E8E5F9900B2A902 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -505,11 +605,40 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lidan.NDLNavigationSolution;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lidan.NSLNavigationSolution;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		95C0C5F21E8E5F9900B2A902 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = Y7673FFN4G;
+				INFOPLIST_FILE = NSLNavigationSolutionTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lidan.NSLNavigationSolutionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NSLNavigationSolutionDemo.app/NSLNavigationSolutionDemo";
+			};
+			name = Debug;
+		};
+		95C0C5F31E8E5F9900B2A902 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = Y7673FFN4G;
+				INFOPLIST_FILE = NSLNavigationSolutionTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lidan.NSLNavigationSolutionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NSLNavigationSolutionDemo.app/NSLNavigationSolutionDemo";
 			};
 			name = Release;
 		};
@@ -534,14 +663,21 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		95C0C5CD1E8E5CB100B2A902 /* Build configuration list for PBXNativeTarget "NSLNavigationSolution" */ = {
+		95C0C5EE1E8E5F9900B2A902 /* Build configuration list for PBXNativeTarget "NSLNavigationSolution" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				95C0C5CE1E8E5CB100B2A902 /* Debug */,
-				95C0C5CF1E8E5CB100B2A902 /* Release */,
+				95C0C5EF1E8E5F9900B2A902 /* Debug */,
+				95C0C5F01E8E5F9900B2A902 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+		};
+		95C0C5F11E8E5F9900B2A902 /* Build configuration list for PBXNativeTarget "NSLNavigationSolutionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95C0C5F21E8E5F9900B2A902 /* Debug */,
+				95C0C5F31E8E5F9900B2A902 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
