@@ -19,6 +19,7 @@
 		9594E85C1E7BE6D100900F46 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594E85B1E7BE6D100900F46 /* AppDelegate.m */; };
 		9594E8641E7BE6D100900F46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9594E8631E7BE6D100900F46 /* Assets.xcassets */; };
 		9594E8701E7BE72E00900F46 /* UINavigationController+LDNavigationSolution.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594E86F1E7BE72E00900F46 /* UINavigationController+LDNavigationSolution.m */; };
+		95F529F41E8E4A3F007AD7E5 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95F529F31E8E4A3F007AD7E5 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		9594E8681E7BE6D100900F46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9594E86E1E7BE72E00900F46 /* UINavigationController+LDNavigationSolution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+LDNavigationSolution.h"; sourceTree = "<group>"; };
 		9594E86F1E7BE72E00900F46 /* UINavigationController+LDNavigationSolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+LDNavigationSolution.m"; sourceTree = "<group>"; };
+		95F529F31E8E4A3F007AD7E5 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				9594E85B1E7BE6D100900F46 /* AppDelegate.m */,
 				9594E8631E7BE6D100900F46 /* Assets.xcassets */,
 				9594E8681E7BE6D100900F46 /* Info.plist */,
+				95F529F31E8E4A3F007AD7E5 /* Launch Screen.storyboard */,
 				9594E8581E7BE6D100900F46 /* main.m */,
 			);
 			path = "Supporting Files";
@@ -203,6 +206,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95F529F41E8E4A3F007AD7E5 /* Launch Screen.storyboard in Resources */,
 				95380C811E7E781C00CBBB32 /* LDGlobalSwitchView.xib in Resources */,
 				9594E8641E7BE6D100900F46 /* Assets.xcassets in Resources */,
 			);
