@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		95378AA11E8F572F003D371B /* NSLNavigationSolution.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95378AA01E8F572F003D371B /* NSLNavigationSolution.framework */; };
 		95730AA21E8F52CE000D7074 /* UIBarButtonItem+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 95730A891E8F52CE000D7074 /* UIBarButtonItem+Convenience.m */; };
 		95730AA31E8F52CE000D7074 /* NSLBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95730A8B1E8F52CE000D7074 /* NSLBaseViewController.m */; };
 		95730AA41E8F52CE000D7074 /* NSLBlueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95730A8D1E8F52CE000D7074 /* NSLBlueViewController.m */; };
@@ -20,15 +19,18 @@
 		95730AAC1E8F52CE000D7074 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95730A9E1E8F52CE000D7074 /* Assets.xcassets */; };
 		95730AAE1E8F52CE000D7074 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95730AA01E8F52CE000D7074 /* Launch Screen.storyboard */; };
 		95730AAF1E8F52CE000D7074 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95730AA11E8F52CE000D7074 /* main.m */; };
+		95E602021E8F8812005F278C /* NSLNavigationSolution.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E602011E8F8812005F278C /* NSLNavigationSolution.framework */; };
+		95E602031E8F8812005F278C /* NSLNavigationSolution.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95E602011E8F8812005F278C /* NSLNavigationSolution.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		95730AC11E8F563F000D7074 /* Embed Frameworks */ = {
+		95E602041E8F8812005F278C /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				95E602031E8F8812005F278C /* NSLNavigationSolution.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -36,7 +38,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		95378AA01E8F572F003D371B /* NSLNavigationSolution.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NSLNavigationSolution.framework; path = "../../Library/Developer/Xcode/DerivedData/NSLNavigationSolution-dsimbixyaycprbfncfwxoqivitno/Build/Products/Debug-iphonesimulator/NSLNavigationSolution.framework"; sourceTree = "<group>"; };
 		95730A391E8F5005000D7074 /* NSLNavigationSolutionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSLNavigationSolutionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95730A881E8F52CE000D7074 /* UIBarButtonItem+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Convenience.h"; sourceTree = "<group>"; };
 		95730A891E8F52CE000D7074 /* UIBarButtonItem+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Convenience.m"; sourceTree = "<group>"; };
@@ -59,6 +60,7 @@
 		95730A9F1E8F52CE000D7074 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95730AA01E8F52CE000D7074 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		95730AA11E8F52CE000D7074 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		95E602011E8F8812005F278C /* NSLNavigationSolution.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NSLNavigationSolution.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95378AA11E8F572F003D371B /* NSLNavigationSolution.framework in Frameworks */,
+				95E602021E8F8812005F278C /* NSLNavigationSolution.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,7 +78,7 @@
 		95378A9F1E8F572F003D371B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				95378AA01E8F572F003D371B /* NSLNavigationSolution.framework */,
+				95E602011E8F8812005F278C /* NSLNavigationSolution.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -168,7 +170,7 @@
 				95730A351E8F5005000D7074 /* Sources */,
 				95730A361E8F5005000D7074 /* Frameworks */,
 				95730A371E8F5005000D7074 /* Resources */,
-				95730AC11E8F563F000D7074 /* Embed Frameworks */,
+				95E602041E8F8812005F278C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
