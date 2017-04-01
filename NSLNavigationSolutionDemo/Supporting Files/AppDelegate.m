@@ -6,7 +6,6 @@
 //  Copyright © 2017 Dennis Lee. All rights reserved.
 //
 
-@import NSLNavigationSolution;
 #import "AppDelegate.h"
 #import "NSLBlueViewController.h"
 

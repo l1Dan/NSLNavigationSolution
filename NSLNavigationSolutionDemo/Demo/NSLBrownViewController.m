@@ -7,7 +7,6 @@
 //
 
 #import "NSLBrownViewController.h"
-@import NSLNavigationSolution;
 #import "UIBarButtonItem+Convenience.h"
 #import "NSLGrayViewController.h"
 

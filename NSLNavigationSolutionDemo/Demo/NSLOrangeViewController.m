@@ -7,7 +7,6 @@
 //
 
 #import "NSLOrangeViewController.h"
-@import NSLNavigationSolution;
 #import "NSLGrayViewController.h"
 #import "NSLBlueViewController.h"
 
