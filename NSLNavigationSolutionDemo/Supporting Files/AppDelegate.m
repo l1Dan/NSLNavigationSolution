@@ -6,8 +6,8 @@
 //  Copyright © 2017 Dennis Lee. All rights reserved.
 //
 
+@import NSLNavigationSolution;
 #import "AppDelegate.h"
-#import "UINavigationController+NSLNavigationSolution.h"
 #import "NSLBlueViewController.h"
 
 @interface AppDelegate () <NSLGlobalSwitchViewDelegate>

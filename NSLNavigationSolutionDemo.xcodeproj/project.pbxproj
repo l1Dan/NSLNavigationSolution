@@ -18,7 +18,6 @@
 		95730AA91E8F52CE000D7074 /* NSLGlobalSwitchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95730A971E8F52CE000D7074 /* NSLGlobalSwitchView.xib */; };
 		95730AAB1E8F52CE000D7074 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 95730A9D1E8F52CE000D7074 /* AppDelegate.m */; };
 		95730AAC1E8F52CE000D7074 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95730A9E1E8F52CE000D7074 /* Assets.xcassets */; };
-		95730AAD1E8F52CE000D7074 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95730A9F1E8F52CE000D7074 /* Info.plist */; };
 		95730AAE1E8F52CE000D7074 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95730AA01E8F52CE000D7074 /* Launch Screen.storyboard */; };
 		95730AAF1E8F52CE000D7074 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95730AA11E8F52CE000D7074 /* main.m */; };
 /* End PBXBuildFile section */
@@ -222,7 +221,6 @@
 				95730AAC1E8F52CE000D7074 /* Assets.xcassets in Resources */,
 				95730AA91E8F52CE000D7074 /* NSLGlobalSwitchView.xib in Resources */,
 				95730AAE1E8F52CE000D7074 /* Launch Screen.storyboard in Resources */,
-				95730AAD1E8F52CE000D7074 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,10 +343,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Y7673FFN4G;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/NSLNavigationSolutionDemo/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -363,10 +358,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Y7673FFN4G;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/NSLNavigationSolutionDemo/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
