@@ -7,7 +7,7 @@
 //
 
 #import "NSLGlobalSwitchView.h"
-#import "UINavigationController+NSLNavigationSolution.h"
+@import NSLNavigationSolution;
 
 @interface NSLGlobalSwitchView()
 @property (weak, nonatomic) IBOutlet UISwitch *globalSwitch;

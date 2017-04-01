@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "95C0C5D61E8E5F9900B2A902"
+               BlueprintIdentifier = "95730A711E8F5179000D7074"
                BuildableName = "NSLNavigationSolution.framework"
                BlueprintName = "NSLNavigationSolution"
                ReferencedContainer = "container:NSLNavigationSolution.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "95C0C5D61E8E5F9900B2A902"
+            BlueprintIdentifier = "95730A711E8F5179000D7074"
             BuildableName = "NSLNavigationSolution.framework"
             BlueprintName = "NSLNavigationSolution"
             ReferencedContainer = "container:NSLNavigationSolution.xcodeproj">
@@ -63,7 +63,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "95C0C5D61E8E5F9900B2A902"
+            BlueprintIdentifier = "95730A711E8F5179000D7074"
             BuildableName = "NSLNavigationSolution.framework"
             BlueprintName = "NSLNavigationSolution"
             ReferencedContainer = "container:NSLNavigationSolution.xcodeproj">

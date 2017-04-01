@@ -2,8 +2,8 @@
 //  NSLNavigationSolution.h
 //  NSLNavigationSolution
 //
-//  Created by Dennis on 31/03/2017.
-//  Copyright © 2017 Dennis Lee. All rights reserved.
+//  Created by Dennis on 01/04/2017.
+//  Copyright © 2017 Dennis. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -15,5 +15,5 @@ FOUNDATION_EXPORT double NSLNavigationSolutionVersionNumber;
 FOUNDATION_EXPORT const unsigned char NSLNavigationSolutionVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <NSLNavigationSolution/PublicHeader.h>
-
+#import "UINavigationController+NSLNavigationSolution.h"
 
