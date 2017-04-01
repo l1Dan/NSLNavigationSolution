@@ -14,7 +14,12 @@ A iOS navigation solution.
 ## 安装
 ## CocoaPods
 ```ruby
-pod 'NSLNavigationSolution', '~> 1.1.0'
+pod 'NSLNavigationSolution', '~> 1.1.1'
+```
+
+### Carthage
+```ogdl
+github "l1Dan/NSLNavigationSolution"
 ```
 
 ## 详细使用见Demo
