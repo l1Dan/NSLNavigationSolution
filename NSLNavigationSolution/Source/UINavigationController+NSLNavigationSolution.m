@@ -2,12 +2,16 @@
 //  UINavigationController+CS.m
 //  NSLNavigationSolution
 //
-//  Created by Dennis Lee on 17/03/2017.
-//  Copyright © 2017 Dennis Lee. All rights reserved.
+//  Created by Leo Lee on 17/03/2017.
+//  Copyright © 2017 Leo Lee. All rights reserved.
 //
 
 #import "UINavigationController+NSLNavigationSolution.h"
 #import <objc/runtime.h>
+
+static const char * INTERACTIVE_DELEGATE = "INTERACTIVE_DELEGATE";
+static const char * INTERACTIVE_POP_TARGET = "INTERACTIVE_POP_TARGET";
+static const char * INTERACTIVE_POP_RUN = "INTERACTIVE_POP_RUN"; // 正在手势交互
 
 @implementation UIViewController (NSLNavigationSolution)
 - (void)ex_viewWillAppear:(BOOL)animated {
@@ -41,41 +45,14 @@
 
 @end
 
-#pragma mark - UINavigationController extension
-static const char * INTERACTIVE_DELEGATE = "INTERACTIVE_DELEGATE";
-
-@interface UINavigationController (NSLNavigationSolutionPrivate)
-@property (nonatomic, strong) id _popTarget;
-@property (nonatomic, assign, getter=_isInteractive) BOOL _interactive; // 正在手势交互
-@end
-
-@implementation UINavigationController (NSLNavigationSolutionPrivate)
-#pragma mark - _popTarget
-- (id)_popTarget {
-    return objc_getAssociatedObject(self, _cmd);
-}
-
-- (void)set_popTarget:(id)_popTarget {
-    objc_setAssociatedObject(self, @selector(_popTarget), _popTarget, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-#pragma mark - _interactive
-- (BOOL)_isInteractive {
-    return [objc_getAssociatedObject(self, _cmd) boolValue];
-}
-
-- (void)set_interactive:(BOOL)_interactive {
-    objc_setAssociatedObject(self, @selector(_isInteractive), @(_interactive), OBJC_ASSOCIATION_ASSIGN);
-}
-@end
-
+#pragma mark - UINavigationController Category
 @implementation UINavigationController (NSLNavigationSolution)
 - (void)ex_viewDidLoad {
     [self ex_viewDidLoad];
 	
-    self._interactive = NO;
-	
+    objc_setAssociatedObject(self, INTERACTIVE_POP_RUN, @(NO), OBJC_ASSOCIATION_ASSIGN);
     objc_setAssociatedObject(self, INTERACTIVE_DELEGATE, self.interactivePopGestureRecognizer.delegate, OBJC_ASSOCIATION_ASSIGN);
+    
     self.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>)self;
     UIGestureRecognizer *gesture = [self interactivePopGestureRecognizer];
     gesture.enabled = NO;
@@ -84,7 +61,7 @@ static const char * INTERACTIVE_DELEGATE = "INTERACTIVE_DELEGATE";
     NSMutableArray *_targets = [gesture valueForKey:@"_targets"];
     id gesterRecognizerTarget = [_targets firstObject];
     id navigationInteractiveTransion = [gesterRecognizerTarget valueForKey:@"_target"];
-    self._popTarget = navigationInteractiveTransion;
+    objc_setAssociatedObject(self, INTERACTIVE_POP_TARGET, navigationInteractiveTransion, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     
     UIScreenEdgePanGestureRecognizer *popGestureRecognizer = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(handleGestureRecognizer:)];
     popGestureRecognizer.edges = UIRectEdgeLeft;
@@ -98,7 +75,8 @@ static const char * INTERACTIVE_DELEGATE = "INTERACTIVE_DELEGATE";
 #pragma mark - observe
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
     if ([keyPath isEqualToString:@"alpha"] && [object isKindOfClass:[UINavigationBar class]]) {
-        if (!self._isInteractive) { // 没有手势交互可以监听
+        BOOL isRun = [objc_getAssociatedObject(self, INTERACTIVE_POP_RUN) boolValue];
+        if (!isRun) { // 没有手势交互可以监听
             UINavigationBar *bar = (UINavigationBar *)object;
             // 本来是要隐藏的，但是现在却是现实的
             if (self.topViewController.nsl_navigationBarTranslucent && bar.alpha == 1.0) {  bar.alpha = 0.0; }
@@ -110,10 +88,12 @@ static const char * INTERACTIVE_DELEGATE = "INTERACTIVE_DELEGATE";
 
 #pragma mark - 导航栏渐变
 - (void)handleGestureRecognizer:(UIScreenEdgePanGestureRecognizer *)gesture {
+    id target = objc_getAssociatedObject(self, INTERACTIVE_POP_TARGET);
     SEL selector = NSSelectorFromString(@"handleNavigationTransition:");
-    IMP imp = [self._popTarget methodForSelector: selector];
+    
+    IMP imp = [target methodForSelector: selector];
     void (*transitionHandle)(id, SEL, UIGestureRecognizer *) = (void *)imp;
-    transitionHandle(self._popTarget, selector, gesture);
+    transitionHandle(target, selector, gesture);
     
     id<UIViewControllerTransitionCoordinator> tc = self.transitionCoordinator;
     UIViewController *fromVC = [tc viewControllerForKey:UITransitionContextFromViewControllerKey];
@@ -136,7 +116,7 @@ static const char * INTERACTIVE_DELEGATE = "INTERACTIVE_DELEGATE";
         case UIGestureRecognizerStateChanged: {
             CGFloat progress = tc.percentComplete;
             barBackgroundView.alpha = reverse ? progress : 1 - progress;
-            self._interactive = YES;
+            objc_setAssociatedObject(self, INTERACTIVE_POP_RUN, @(YES), OBJC_ASSOCIATION_ASSIGN);
             
             break;
         }
@@ -146,7 +126,7 @@ static const char * INTERACTIVE_DELEGATE = "INTERACTIVE_DELEGATE";
             } else {
                 barBackgroundView.alpha = reverse ? 1.0 : 0.0;
             }
-            self._interactive = NO;
+            objc_setAssociatedObject(self, INTERACTIVE_POP_RUN, @(NO), OBJC_ASSOCIATION_ASSIGN);
             
             break;
         }

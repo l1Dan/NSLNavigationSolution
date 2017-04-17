@@ -2,8 +2,8 @@
 //  NSLGlobalSwitchView.m
 //  NSLNavigationSolution
 //
-//  Created by Dennis on 19/03/2017.
-//  Copyright © 2017 Dennis Lee. All rights reserved.
+//  Created by Leo Lee on 19/03/2017.
+//  Copyright © 2017 Leo Lee. All rights reserved.
 //
 
 #import "NSLGlobalSwitchView.h"

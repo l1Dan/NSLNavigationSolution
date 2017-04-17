@@ -2,8 +2,8 @@
 //  NSLNavigationSolution.h
 //  NSLNavigationSolution
 //
-//  Created by Dennis on 01/04/2017.
-//  Copyright © 2017 Dennis. All rights reserved.
+//  Created by Leo Lee on 01/04/2017.
+//  Copyright © 2017 Leo Lee. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

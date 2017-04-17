@@ -1,5 +1,5 @@
 # NSLNavigationSolution
-A iOS navigation solution.
+An iOS navigation solution.
 一个 iOS 导航栏整体的解决方案。
 
 ## 特点介绍
