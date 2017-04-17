@@ -9,24 +9,6 @@
 #import "UINavigationController+NSLNavigationSolution.h"
 #import <objc/runtime.h>
 
-static void methodExchangeImplementations(Class class, SEL oringinal, SEL swizzled) {
-    Method originalMethod = class_getInstanceMethod(class, oringinal);
-    Method swizzledMethod = class_getInstanceMethod(class, swizzled);
-    
-    BOOL success = class_addMethod(class, oringinal, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
-    if (success) {
-        class_replaceMethod(class, swizzled, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
-    } else {
-        method_exchangeImplementations(originalMethod, swizzledMethod);
-    }
-}
-
-static void __attribute__((constructor)) initialize(void) {
-    methodExchangeImplementations([UIViewController class], NSSelectorFromString(@"viewWillAppear:"), NSSelectorFromString(@"ex_viewWillAppear:)"));
-    methodExchangeImplementations([UINavigationController class], NSSelectorFromString(@"viewDidLoad"), NSSelectorFromString(@"ex_viewDidLoad"));
-    methodExchangeImplementations([UINavigationController class], NSSelectorFromString(@"navigationBar:shouldPopItem:"), NSSelectorFromString(@"ex_navigationBar:shouldPopItem:"));
-}
-
 @implementation UIViewController (NSLNavigationSolution)
 - (void)ex_viewWillAppear:(BOOL)animated {
     [self ex_viewWillAppear:animated];
@@ -254,3 +236,22 @@ static const char * INTERACTIVE_DELEGATE = "INTERACTIVE_DELEGATE";
     [self.navigationBar removeObserver:self forKeyPath:@"alpha" context:NULL];
 }
 @end
+
+#pragma mark - exchange method
+static void NSLExchangeMethods(Class cls, SEL s1, SEL s2) {
+    Method m1 = class_getInstanceMethod(cls, s1);
+    Method m2 = class_getInstanceMethod(cls, s2);
+    
+    BOOL success = class_addMethod(cls, s1, method_getImplementation(m2), method_getTypeEncoding(m2));
+    if (success) {
+        class_replaceMethod(cls, s2, method_getImplementation(m1), method_getTypeEncoding(m1));
+    } else {
+        method_exchangeImplementations(m1, m2);
+    }
+}
+
+static void __attribute__((constructor)) initialize(void) {
+    NSLExchangeMethods([UIViewController class], @selector(viewWillAppear:), @selector(ex_viewWillAppear:));
+    NSLExchangeMethods([UINavigationController class], @selector(viewDidLoad), @selector(ex_viewDidLoad));
+    NSLExchangeMethods([UINavigationController class], @selector(navigationBar:shouldPopItem:), @selector(ex_navigationBar:shouldPopItem:));
+}
