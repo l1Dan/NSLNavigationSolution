@@ -69,7 +69,7 @@ static const char * INTERACTIVE_POP_RUN = "INTERACTIVE_POP_RUN"; // 正在手势
     [gestureView addGestureRecognizer:popGestureRecognizer];
     
     // 防止系统中途修改导航栏
-    [self.navigationBar addObserver:self forKeyPath:@"alpha" options:NSKeyValueObservingOptionNew context:NULL];
+//    [self.navigationBar addObserver:self forKeyPath:@"alpha" options:NSKeyValueObservingOptionNew context:NULL];
 }
 
 #pragma mark - observe
@@ -212,9 +212,9 @@ static const char * INTERACTIVE_POP_RUN = "INTERACTIVE_POP_RUN"; // 正在手势
     return self.visibleViewController;
 }
 
-- (void)dealloc {
-    [self.navigationBar removeObserver:self forKeyPath:@"alpha" context:NULL];
-}
+//- (void)dealloc {
+//    [self.navigationBar removeObserver:self forKeyPath:@"alpha" context:NULL];
+//}
 @end
 
 #pragma mark - exchange method
