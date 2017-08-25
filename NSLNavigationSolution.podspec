@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "NSLNavigationSolution"
-  s.version      = "1.2.0"
+  s.version      = "1.2.1"
   s.summary      = "An iOS navigation solution."
   s.homepage     = "https://github.com/l1Dan/NSLNavigationSolution"
   s.license      = "MIT"
