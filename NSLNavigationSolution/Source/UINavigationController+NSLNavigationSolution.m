@@ -18,29 +18,42 @@ static const char * INTERACTIVE_POP_RUN = "INTERACTIVE_POP_RUN"; // 正在手势
     [self ex_viewWillAppear:animated];
     // 解决导航栏闪烁问题
     [UIView animateWithDuration:0.1 animations:^{
-        self.navigationController.navigationBar.alpha = self.nsl_navigationBarTranslucent ? 0.0 : 1.0;
+        self.navigationController.navigationBar.alpha = [self navigationBarTranslucent] ? 0.0 : 1.0;
     }];
     
-    if (!self.nsl_navigationBarTranslucent) { self.nsl_navigationBarTranslucent = NO; }
+    if (![self navigationBarTranslucent]) { [self setNavigationBarTranslucent:NO]; }
 }
 
-#pragma mark - nsl_interactivePopDisabled
-- (BOOL)nsl_interactivePopDisabled {
+#pragma mark - solution
+- (id<NSLViewControllerProtocol>)solution {
+    id <NSLViewControllerProtocol> protocol = objc_getAssociatedObject(self, _cmd);
+    if (!protocol) {
+        protocol = (id<NSLViewControllerProtocol>)self;
+        [self setSolution:protocol];
+    }
+    return protocol;
+}
+
+- (void)setSolution:(id<NSLViewControllerProtocol> _Nonnull)solution {
+    objc_setAssociatedObject(self, @selector(solution), solution, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+#pragma mark - NSLViewControllerProtocol
+- (BOOL)interactivePopDisabled {
     return [objc_getAssociatedObject(self, _cmd) boolValue];
 }
 
-- (void)setNsl_interactivePopDisabled:(BOOL)nsl_interactivePopDisabled {
-    objc_setAssociatedObject(self, @selector(nsl_interactivePopDisabled), @(nsl_interactivePopDisabled), OBJC_ASSOCIATION_ASSIGN);
+- (void)setInteractivePopDisabled:(BOOL)interactivePopDisabled {
+    objc_setAssociatedObject(self, @selector(interactivePopDisabled), @(interactivePopDisabled), OBJC_ASSOCIATION_ASSIGN);
 }
 
-#pragma mark - nsl_navigationBarTranslucent
-- (BOOL)nsl_navigationBarTranslucent {
+- (BOOL)navigationBarTranslucent {
     return [objc_getAssociatedObject(self, _cmd) boolValue];
 }
 
-- (void)setNsl_navigationBarTranslucent:(BOOL)nsl_navigationBarTranslucent {
-    objc_setAssociatedObject(self, @selector(nsl_navigationBarTranslucent), @(nsl_navigationBarTranslucent), OBJC_ASSOCIATION_ASSIGN);
-    self.navigationController.navigationBar.alpha = nsl_navigationBarTranslucent ? 0.0 : 1.0;
+- (void)setNavigationBarTranslucent:(BOOL)navigationBarTranslucent {
+    objc_setAssociatedObject(self, @selector(navigationBarTranslucent), @(navigationBarTranslucent), OBJC_ASSOCIATION_ASSIGN);
+    self.navigationController.navigationBar.alpha = navigationBarTranslucent ? 0.0 : 1.0;
 }
 
 @end
@@ -79,7 +92,7 @@ static const char * INTERACTIVE_POP_RUN = "INTERACTIVE_POP_RUN"; // 正在手势
         if (!isRun) { // 没有手势交互可以监听
             UINavigationBar *bar = (UINavigationBar *)object;
             // 本来是要隐藏的，但是现在却是现实的
-            if (self.topViewController.nsl_navigationBarTranslucent && bar.alpha == 1.0) {  bar.alpha = 0.0; }
+            if ([self.topViewController navigationBarTranslucent] && bar.alpha == 1.0) {  bar.alpha = 0.0; }
         }
     } else {
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
@@ -105,11 +118,11 @@ static const char * INTERACTIVE_POP_RUN = "INTERACTIVE_POP_RUN"; // 正在手势
      3）从 无 --≥ 有，alpha 变为 1.0
      4）从 有 --≥ 无，alpha 变为 0.0
      */
-    if (fromVC.nsl_navigationBarTranslucent && toVC.nsl_navigationBarTranslucent) { return; }
-    if (!fromVC.nsl_navigationBarTranslucent && !toVC.nsl_navigationBarTranslucent) { return; }
+    if ([fromVC navigationBarTranslucent] && [toVC navigationBarTranslucent]) { return; }
+    if (![fromVC navigationBarTranslucent] && ![toVC navigationBarTranslucent]) { return; }
     
     UIView *barBackgroundView = self.navigationBar;
-    BOOL reverse = fromVC.nsl_navigationBarTranslucent;
+    BOOL reverse = [fromVC navigationBarTranslucent];
     
     switch (gesture.state) {
         case UIGestureRecognizerStateBegan:
@@ -157,7 +170,7 @@ static const char * INTERACTIVE_POP_RUN = "INTERACTIVE_POP_RUN"; // 正在手势
     if (self.viewControllers.count <= 1) { return NO; }
     
     UIViewController *topViewController = [self topViewController];
-    if (topViewController.nsl_interactivePopDisabled) { return NO; }
+    if ([topViewController interactivePopDisabled]) { return NO; }
     
     if ([topViewController conformsToProtocol:@protocol(UINavigationControllerCustomizable)]) {
         return [(id<UINavigationControllerCustomizable>)topViewController navigationController:self shouldJumpToViewControllerUsingGesture:YES];
@@ -167,14 +180,17 @@ static const char * INTERACTIVE_POP_RUN = "INTERACTIVE_POP_RUN"; // 正在手势
     return [delegate gestureRecognizerShouldBegin:gestureRecognizer];
 }
 
-- (NSArray<UIViewController *> *)findViewControllers:(NSArray<UIViewController *> *)viewControllers whereViewController:(UIViewController *)viewController {
+- (NSArray<UIViewController *> *)findViewControllerClass:(Class)cls
+                                     fromViewControllers:(NSArray<UIViewController *> *)viewControllers
+                                              usingBlock:(UIViewController * (^)(void))block {
+    
     /*  导航栏查找规则：
      1）如果传入 viewController 存在于 viewControllers 中，则使用 viewControllers 中的以及存在的。
      2）如果传入 viewController 不存在 viewControllers 中，则使用传入的 viewController。
      */
     NSMutableArray<UIViewController *> *elements = [NSMutableArray array];
     for (UIViewController *vc in viewControllers) {
-        if ([vc isKindOfClass:[viewController class]]) {
+        if ([vc isKindOfClass:cls]) {
             if (elements.count == viewControllers.count - 1) {
                 [elements addObject:vc];
                 [elements addObject:vc];
@@ -185,7 +201,10 @@ static const char * INTERACTIVE_POP_RUN = "INTERACTIVE_POP_RUN"; // 正在手势
             break;
         } else {
             if (elements.count == viewControllers.count - 1) {
-                [elements addObject:viewController];
+                if (block) {
+                    UIViewController *vc = block();
+                    [elements addObject:vc];
+                }
             }
             [elements addObject:vc];
         }
@@ -193,18 +212,26 @@ static const char * INTERACTIVE_POP_RUN = "INTERACTIVE_POP_RUN"; // 正在手势
     return elements;
 }
 
-#pragma mark - nsl_jumpToViewController
-- (UIViewController *)nsl_jumpViewController {
-    return objc_getAssociatedObject(self, _cmd);
+#pragma mark - solution
+- (id<NSLViewControllerProtocol>)solution {
+    id<NSLViewControllerProtocol> protocol = objc_getAssociatedObject(self, _cmd);
+    if (!protocol) {
+        protocol = (id<NSLViewControllerProtocol>)self;
+        [self setSolution:protocol];
+    }
+    return protocol;
 }
 
-- (void)setNsl_jumpViewController:(UIViewController *)nsl_jumpViewController {
-    objc_setAssociatedObject(self, @selector(nsl_jumpViewController), nsl_jumpViewController, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    self.viewControllers = [self findViewControllers:[self viewControllers] whereViewController:nsl_jumpViewController];
+- (void)setSolution:(id<NSLViewControllerProtocol> _Nonnull)solution {
+    objc_setAssociatedObject(self, @selector(solution), solution, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-#pragma mark - Public method
-- (void)nsl_clickBackBarButtonItem {
+#pragma mark - NSLNavigationControllerProtocol
+- (void)jumpViewControllerClass:(Class)cls usingBlock:(UIViewController * _Nonnull (^)(void))block {
+    self.viewControllers = [self findViewControllerClass:cls fromViewControllers:self.viewControllers usingBlock:block];
+}
+
+- (void)clickBackBarButtonItem {
     [(id<UINavigationBarDelegate>)self navigationBar:self.topViewController.navigationController.navigationBar shouldPopItem:self.topViewController.navigationItem];
 }
 

@@ -6,7 +6,7 @@
 //  Copyright © 2017 Leo Lee. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "NSLNavigationSolutionProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -25,21 +25,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIViewController (NSLNavigationSolution)
 
-/// 是否禁用手势返回
-@property (nonatomic, assign) BOOL nsl_interactivePopDisabled;
-
-/// 是否设置导航栏透明
-@property (nonatomic, assign) BOOL nsl_navigationBarTranslucent;
+@property (nonatomic, strong, readonly) id<NSLViewControllerProtocol> solution;
 
 @end
 
 @interface UINavigationController (NSLNavigationSolution)
 
-/// 设置需要跳转的控制器
-@property (nonatomic, strong) UIViewController *nsl_jumpViewController;
-
-/// 点击返回按钮
-- (void)nsl_clickBackBarButtonItem;
+@property (nonatomic, strong, readonly) id<NSLNavigationControllerProtocol> solution;
 
 @end
 
