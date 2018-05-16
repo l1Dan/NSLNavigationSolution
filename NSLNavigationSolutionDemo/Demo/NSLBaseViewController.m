@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.nsl_navigationBarTranslucent = NO;
+    self.solution.navigationBarTranslucent = NO;
     self.navigationItem.backBarButtonItem = [self backBarButtonItem];
     
     if ([self.navigationController.viewControllers count] < 4) {
@@ -49,7 +49,7 @@
     [super viewWillAppear:animated];
     
     AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    [delegate.globalView changeSwitchStatus:self.nsl_navigationBarTranslucent];
+    [delegate.globalView changeSwitchStatus:self.solution.navigationBarTranslucent];
 }
 
 #pragma mark - Public Method

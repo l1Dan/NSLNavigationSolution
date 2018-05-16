@@ -43,7 +43,7 @@
 #pragma mark - NSLGlobalSwitchViewDelegate
 - (void)globalSwitchView:(NSLGlobalSwitchView *)view didClickSwitch:(UISwitch *)aSwitch {
     UIViewController *topViewController = [(UINavigationController *)self.window.rootViewController topViewController];
-    topViewController.nsl_navigationBarTranslucent = aSwitch.isOn;
+    topViewController.solution.navigationBarTranslucent = aSwitch.isOn;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

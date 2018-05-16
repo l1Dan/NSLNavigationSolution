@@ -30,7 +30,7 @@
 
 /// 自定义返回按钮点击返回
 - (void)clickBackItem:(UIBarButtonItem *)item {
-    [self.navigationController nsl_clickBackBarButtonItem];
+    [self.navigationController.solution clickBackBarButtonItem];
 }
 
 #pragma makr - UINavigationControllerCustomizable

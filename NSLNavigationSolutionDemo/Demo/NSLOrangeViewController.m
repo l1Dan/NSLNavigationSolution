@@ -29,7 +29,9 @@
 // 监听点击返回和手势返回
 - (BOOL)navigationController:(UINavigationController *)navigationController shouldJumpToViewControllerUsingGesture:(BOOL)usingGesture {
     if (usingGesture) {
-        navigationController.nsl_jumpViewController = [[NSLBlueViewController alloc] init];
+        [navigationController.solution jumpViewControllerClass:[NSLBlueViewController class] usingBlock:^UIViewController * _Nonnull{
+            return [[NSLBlueViewController alloc] init];
+        }];
         return YES;
     } else {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"温馨提示" message:@"是否返回到上个页面？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
@@ -42,7 +44,9 @@
 #pragma mark - UIAlertViewDelegate
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex != 0) {
-        self.navigationController.nsl_jumpViewController = [[NSLGrayViewController alloc] init];
+        [self.navigationController.solution jumpViewControllerClass:[NSLGrayViewController class] usingBlock:^UIViewController * _Nonnull{
+            return [[NSLGrayViewController alloc] init];
+        }];
         
         [self.navigationController popViewControllerAnimated:YES];
     }
