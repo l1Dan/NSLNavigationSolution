@@ -10,6 +10,7 @@
 #import <NSLNavigationSolution/NSLNavigationSolution.h>
 
 @interface NSLBaseViewController : UIViewController
+
 @property (nonatomic, copy) NSString *note;
 
 - (void)clickNextButton:(UIButton *)button;

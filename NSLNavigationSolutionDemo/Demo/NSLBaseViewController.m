@@ -10,10 +10,13 @@
 #import "AppDelegate.h"
 
 @interface NSLBaseViewController()
+
 @property (nonatomic, strong) UILabel *noteLabel;
+
 @end
 
 @implementation NSLBaseViewController
+
 + (void)initialize {
     [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
     [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];

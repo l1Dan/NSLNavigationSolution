@@ -10,10 +10,13 @@
 @import NSLNavigationSolution;
 
 @interface NSLGlobalSwitchView()
+
 @property (weak, nonatomic) IBOutlet UISwitch *globalSwitch;
+
 @end
 
 @implementation NSLGlobalSwitchView
+
 + (instancetype)globalSwitchView {
     return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil] lastObject];
 }

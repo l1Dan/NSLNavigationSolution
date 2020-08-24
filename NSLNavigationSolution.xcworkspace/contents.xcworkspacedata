@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:NSLNavigationSolution.xcodeproj">
+      location = "group:NSLNavigationSolutionDemo.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:NSLNavigationSolutionDemo.xcodeproj">
+      location = "group:NSLNavigationSolution.xcodeproj">
    </FileRef>
 </Workspace>

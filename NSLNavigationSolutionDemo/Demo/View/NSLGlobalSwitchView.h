@@ -9,14 +9,19 @@
 #import <UIKit/UIKit.h>
 
 @class NSLGlobalSwitchView;
+
 @protocol NSLGlobalSwitchViewDelegate <NSObject>
+
 - (void)globalSwitchView:(NSLGlobalSwitchView *)view didClickSwitch:(UISwitch *)aSwitch;
+
 @end
 
 @interface NSLGlobalSwitchView : UIView
+
 @property (nonatomic, weak) id<NSLGlobalSwitchViewDelegate> delegate;
 
 + (instancetype)globalSwitchView;
 
 - (void)changeSwitchStatus:(BOOL)status;
+
 @end

@@ -10,6 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 @interface UIBarButtonItem (Convenience)
+
 + (instancetype)itemWithTitle:(nullable NSString *)title target:(nullable id)target action:(nullable SEL)action;
+
 @end
 NS_ASSUME_NONNULL_END
