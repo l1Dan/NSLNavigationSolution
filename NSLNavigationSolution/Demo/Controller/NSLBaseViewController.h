@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <NSLNavigationSolution/NSLNavigationSolution.h>
+#import "UINavigationController+NSLNavigationSolution.h"
 
 @interface NSLBaseViewController : UIViewController
 

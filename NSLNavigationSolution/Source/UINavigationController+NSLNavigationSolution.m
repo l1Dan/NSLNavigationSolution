@@ -140,7 +140,7 @@ static const char * INTERACTIVE_POP_RUN = "INTERACTIVE_POP_RUN"; // 正在手势
         return [self ex_navigationBar:navigationBar shouldPopItem:item];
     }
     
-    if ([topViewController conformsToProtocol:@protocol(UINavigationControllerCustomizable)]) {
+    if ([topViewController respondsToSelector:@selector(navigationController:shouldJumpToViewControllerUsingGesture:)]) {
         if (![(id<UINavigationControllerCustomizable>)topViewController navigationController:self shouldJumpToViewControllerUsingGesture:NO]) {
             for (UIView *v in [navigationBar subviews]) {
                 // 当 `navigationControllerShouldJumpToViewController:` 返回 `NO` 时，返回按钮需要变回正常颜色
@@ -159,12 +159,16 @@ static const char * INTERACTIVE_POP_RUN = "INTERACTIVE_POP_RUN"; // 正在手势
     UIViewController *topViewController = [self topViewController];
     if (topViewController.nsl_interactivePopDisabled) { return NO; }
     
-    if ([topViewController conformsToProtocol:@protocol(UINavigationControllerCustomizable)]) {
+    if ([topViewController respondsToSelector:@selector(navigationController:shouldJumpToViewControllerUsingGesture:)]) {
         return [(id<UINavigationControllerCustomizable>)topViewController navigationController:self shouldJumpToViewControllerUsingGesture:YES];
     }
     
     id<UIGestureRecognizerDelegate> delegate = objc_getAssociatedObject(self, INTERACTIVE_DELEGATE);
-    return [delegate gestureRecognizerShouldBegin:gestureRecognizer];
+    if (delegate && [delegate respondsToSelector:@selector(translationInView:)]) {
+        return [delegate gestureRecognizerShouldBegin:gestureRecognizer];
+    } else {
+        return YES;        
+    }
 }
 
 - (NSArray<UIViewController *> *)findViewControllers:(NSArray<UIViewController *> *)viewControllers whereViewController:(UIViewController *)viewController {

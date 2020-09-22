@@ -7,7 +7,6 @@
 //
 
 #import "NSLGlobalSwitchView.h"
-@import NSLNavigationSolution;
 
 @interface NSLGlobalSwitchView()
 
